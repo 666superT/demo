@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 全局变量在多人开发的时候容易被重复声明，然后被覆盖，出现问题时不易查找问题根源
+        // let fn=function(){} == function fn(){}  函数名也是变量的一种存在，容易混淆
+
+        // 解决方案：用对象收编变量，在调用时只是函数名前面多了对象名称，示例如下
+        let obj = {
+            fn() {
+                console.log("hello word");
+            }
+        }
+        obj.fn() //虽然这种方法也可能出现重复声明的问题，但是现在出现问题时我们可以更精准的定位到出现问题的位置
+
+
+
+        // function fun(){
+        //     return {
+        //         add(num){
+        //             console.log(num)
+        //         }
+        //     }
+        // }
+
+        // let a=fun()
+        // a.add(6)
+        // a.add(999)
+
+
+    </script>
+</body>
+
+</html>

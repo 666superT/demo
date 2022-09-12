@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        border: 1px solid red;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="500" height="300" id="canvas"></canvas>
+  </body>
+  <script>
+    const canvas = document.querySelector("#canvas");
+    // console.log(canvas);
+    context = canvas.getContext("2d");
+    console.log(context);
+    context.moveTo(10, 10);
+  </script>
+</html>

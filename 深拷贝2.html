@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 深拷贝核心：把原数据赋值给新数据，新数据发生改变，原数据没有变化
+
+      function getDataType(arg) {
+        // 检测数据类型
+        let dataType = Object.prototype.toString.call(arg);
+
+        // 数据类型对象
+        let mapType = {
+          "[object Boolean]": "boolean",
+          "[object Number]": "number",
+          "[object String]": "string",
+          "[object Function]": "function",
+          "[object Array]": "array",
+          "[object Date]": "date",
+          "[object RegExp]": "regExp",
+          "[object Undefined]": "undefined",
+          "[object Null]": "null",
+          "[object Object]": "object",
+        };
+
+        return mapType[dataType];
+      }
+
+      function deepCopy(data) {
+        let result;
+        if (getDataType(data) === "array") {
+          result = [];
+          for (let i = 0; i < data.length; i++) {
+            result.push(arguments.callee(data[i]));
+          }
+        } else if (getDataType(data) === "object") {
+          result = {};
+          for (let i in data) {
+            result[i] = arguments.callee(data[i]);
+          }
+        } else {
+          return data;
+        }
+        return result;
+      }
+
+      let arr = [function () {}, { name: "小明" }, ["6", [999]]];
+      let data = deepCopy(arr);
+
+      data[2][1] = [111];
+
+      console.log(arr);
+      console.log(data);
+    </script>
+  </body>
+</html>

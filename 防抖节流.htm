@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dv {
+            width: 0;
+            height: 0;
+            margin: 0 auto;
+            border-top: 0px solid #777;
+            border-left: 50px solid transparent;
+            border-bottom: 50px solid #555;
+            border-right: 50px solid transparent;
+            transform: translateY(90px)
+        }
+        video{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="inp" >上传图片</label>
+    <input type="file" id="inp" ref="inp" style="display: none;">
+
+    <div class="dv"></div>
+
+    <video src="https://www.bilibili.com/video/BV1zf4y1r711?p=8&vd_source=72e66dc044d7df599383773e280556b0"></video>
+    <!-- <input type="text" id="inp" /> -->
+    <script>
+        // inp.oninput = debounce(function () {
+        //     setTimeout(()=>{
+        //         console.log('请求成功');
+        //     },500)
+        // }, 1000)
+
+        // function debounce(fn, delay) {
+        //     let timer = null
+        //     return function () {
+        //         if (timer !== null) {
+        //             clearTimeout(timer)
+        //         }
+        //         timer = setTimeout(() => {
+        //             // console.log(this);
+        //             fn()
+        //         }, delay);
+        //     }
+        // }
+
+        // let arr=[1,1,2,2,3]
+        // let narr=[...new Set(arr)]
+        // console.log(narr);
+
+        // JSON.parse(JSON.stringify())
+
+            // 自动调用函数
+        //    let a=(function(){
+        //        console.log(6);
+        //    })()
+
+
+        // 时间过滤
+        // let date = new Date()
+        // Date.prototype.format = function () {
+        //     let y = date.getFullYear()
+        //     let m = date.getMonth() + 1
+        //     let d = date.getDate()
+        //     return `${y}年${m}月${d}日`
+        // }
+
+        // console.log(date.format());
+
+        // let a=1
+        // let b=1
+        // console.log(a===b);
+
+        // let obj={
+        //     name:1
+        // }
+        // let obj1=obj
+        // // let obj2=obj
+        // console.log(obj===obj1);
+
+
+
+        // function fn(arr){
+        //     arr.push(10)
+        // }
+
+        // let b=[1,2,3]
+        // fn(b)
+        // console.log(b);
+
+
+        // 冒泡排序
+            let arr=[7,9,3,5]
+        // function fn(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        let t = arr[j]
+                        arr[j] = arr[j + 1]
+                        arr[j + 1] = t
+                    }
+                }
+            }
+            console.log(arr);
+            // return (arr)
+        // }
+        // console.log(fn(arr = [1, 8, 5, 3]));
+    </script>
+</body>
+
+</html>
