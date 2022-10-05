@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, 2, 3, 4];
+      const sum = arr.reduce((pre, next, index, arr) => {
+        console.log(pre); //累加器 5、6、8、11、15  又是开始值  有第二个参数（5）就从第二个参数开始算  没有就从arr[0]开始算
+        console.log(next); //下一个值
+        console.log(index); //下标 有第二个参数从0开始  没有从1开始
+        console.log(arr); // 数字本身
+
+        return pre + next;
+      }, 5);
+
+      console.log(sum);
+    </script>
+  </body>
+</html>

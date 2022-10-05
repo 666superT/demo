@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      margin: 100px auto;
+      width: 200px;
+      height: 200px;
+      background: url("https://img1.baidu.com/it/u=1919734834,2576763151&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500");
+      background-size: 100%;
+      transition: all 1s;
+      border-radius: 20px;
+    }
+    .box:hover {
+      /* 阴影  */
+      filter: drop-shadow(50px 50px 2em #646cffaa);
+      /* box-shadow: 0 0 2em #646cffaa; */
+
+      /* 调整灰度  将图像转换为灰度图像，默认值为 0%，表示原始图像；100％ 表示将图像完全变成灰度图像（即黑白图像），不允许为负值*/
+      /* filter: grayscale(100%); */
+
+      /* 模糊  为图像设置高斯模糊，默认值为 0，单位为像素，值较大越模糊*/
+      /* filter: blur(10px); */
+
+      /* 调整亮度  number越大图像越亮，number不能取负值，可以是整数也可以是百分比*/
+      /* filter: brightness(5); */
+
+      /* 调整对比度  默认值为 100％，代表原始图像；0％ 将使图像完全变黑；当值超过 100％ 时图像将获得更高的对比度*/
+      /* filter: contrast(50%); */
+
+      /* 反转图像 */
+      /* filter: invert(100%); */
+    }
+  </style>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

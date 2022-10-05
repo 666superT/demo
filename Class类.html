@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Father {
+        say() {
+            console.log(111)
+            return "我是爸爸"
+        }
+
+        add(a, b) {
+            console.log(a + b)
+        }
+    }
+
+    // 继承的就近原则（先执行自身的方法，自身没有这个方法才会去寻找执行父类中的方法，找不到会报错）
+
+    class Son extends Father {
+        say() {
+            console.log(super.say() + '老六')
+        }
+
+        sub(a, b) {
+            console.log(a - b)
+        }
+    }
+
+    let son = new Son()
+    son.say()
+    son.sub(5, 3)
+    son.add(5, 3)
+</script>
+</html>
